@@ -1,9 +1,10 @@
 <?php
     function ctrlIndex($request, $response, $container) {
 
-        $data = $container->test()->getAll();
+        $cookiesAccepted = $request->get(INPUT_COOKIE, "cookiesAccepted");
 
-        $response->set("data", $data);
+        $cookiesAccepted = isset($cookiesAccepted) ? $cookiesAccepted : false;
+        $response->set("cookiesAccepted", $cookiesAccepted);
 
         $response->setTemplate("index.php");
         return $response;

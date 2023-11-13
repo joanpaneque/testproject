@@ -44,8 +44,12 @@ class Container
     public function request() {
         return new \Emeset\Request();
     }
-    
-    public function test() {
-        return new \Daw\Test($this->sql);
+
+    public function registration() {
+        return new \Daw\Registration($this->sql);
+    }
+
+    public function identification() {
+        return new \Daw\Identification($this->config);
     }
 }
